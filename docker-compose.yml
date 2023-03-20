@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  CategoriesServis:
+   image: ${DOCKER_REGISTRY-}katimaj
+   build:
+    context: ./CategoriesServis
+    dockerfile: Dockerfile
+   container_name: katcont
+   ports:
+    - "1202:80"
+  ProductServis:
+   image: ${DOCKER_REGISTRY-}prodimaj
+   build:
+    context: ./ProductServis
+    dockerfile: Dockerfile
+   container_name: prodcont
+   ports:
+    - "1203:80"
+  TokenServis:
+   image: ${DOCKER_REGISTRY-}tokenimaj
+   build:
+    context: ./TokenServis
+    dockerfile: Dockerfile
+   container_name: tokencont
+   ports:
+    - "1204:80"
